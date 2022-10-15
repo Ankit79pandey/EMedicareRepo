@@ -1,0 +1,40 @@
+<div id="sect1"class="container">
+    <header class="main-header-1">
+        <div>
+            <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="logo">Pocket-Pills</a>
+            </div>
+            <nav class="navigation">
+                <a routerLink="/userpage" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Back</a>
+                <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="main-items">Log-out</a>
+            </nav>
+    </header>
+  <router-outlet></router-outlet>
+  <h1  style="text-align: center;color: black;">Your Cart</h1>
+<div>
+    <div class="doc" style="text-align:center;">
+    <table border="5" class="table table-hover table-info" align="center" bordercolor="white" style="width: 1000px;">
+        <tr style="font-family: 'Times New Roman', Times, serif;"> 
+            
+            <th>Medicine</th>
+            <th>Desccription</th>
+            <th>Price</th>
+            <th>Proceed For Payment</th>
+            <th>Remove From Cart</th>
+            
+        </tr>
+        <tr *ngFor="let cart of carts" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            
+            <td>{{cart.medicineName}}</td>
+            <td>{{cart.description}}</td>
+            <td>{{cart.price}}</td>
+            <td> <a routerLink="/billing/{{cart.medicineId}}" class="button">BUY NOW</a></td>
+            <td> <button (click)="deleteCart(cart.medicineId)" class="buttonon">REMOVE FROM CART</button></td>
+            
+        </tr>
+        </table>
+      <!-- <button class="dropdown-item" (click)="payment()">Proceed to checkout</button> -->
+ 
+    </div>
+   
+    </div> 
+    <router-outlet></router-outlet>

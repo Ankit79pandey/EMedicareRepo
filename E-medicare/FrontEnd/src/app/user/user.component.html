@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<router-outlet></router-outlet>
+<div style="display: flex">
+    <div id="sect1"class="container">
+<div class="admin-main">
+    
+    <br><br><br><br><h2 style="color: white">PLEASE LOG-IN TO PROCEED</h2><br>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="login-div" align="center">
+        <table class="loginform">
+            <tr>
+                <td><label style="color: white" for="username"><h3>User Name: </h3></label></td>
+                <td><input type="UserName" id="username" name="username" 
+                    class="searchTextField" placeholder="Enter Username" ngModel> 
+                </td>	 
+            </tr><br>
+            <tr>
+                <td><label style="color: white" for="password"><h3>Password: </h3></label></td>
+                <td><input type="password" id="password" name="password" 
+                class="searchTextField" placeholder="Enter Password" ngModel>
+            </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><br>
+                <input type="submit" value="Login" class="actionBtn"></td>
+            </tr>
+            </table>
+        </div>
+    </form> 
+    <h3 style="color: rgb(115, 255, 0)" class="newuser">New User?<a [routerLink]="['/registration']"style="color: rgb(115, 255, 0)">Sign Up</a></h3>
+</div></div></div>
